@@ -1,15 +1,19 @@
 export class Person {
 
-    #birthDate = new Date;
+    #birthDate;
     constructor(firstName, lastName, birthDate) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.#birthDate = new Date(birthDate.replace(/(\d{2})-(\d{2})-(\d{4})/, "$1/$2/$3"));
-        // приватное свойство даты рождения из формата мм-дд-гггг в мм/дд/гггг
+        this.birthday = birthDate;
+
     }
 
     get birthday() { // геттер для чтения приватного свойства #birthDate
         return this.#birthDate;
+    }
+    set birthday(date) { // сеттер для назначения приватного свойства #birthDate
+        this.#birthDate = new Date(date.replace(/(\d{2})-(\d{2})-(\d{4})/, "$1/$2/$3"));
+                            // перевод даты из формата мм-дд-гггг в мм/дд/гггг
     }
 
     get getFullName() { // геттер для получения полного имени

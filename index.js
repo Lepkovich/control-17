@@ -2,6 +2,7 @@ import {Worker} from './worker.js'
 
 class App {
     constructor() {
+
         this.workers = [
             new Worker('Иван', 'Иванов', '05-16-1980', 'менеджер'),
             new Worker('Петр', 'Петров', '08-23-1980', 'разработчик'),
@@ -12,7 +13,6 @@ class App {
         this.workers[2].rate = 1500;
         this.workers[3].rate = 800;
         this.workers[4].rate = 2000;
-
 
         this.workers[0].addDays(10);
         this.workers[0].addDays(-2); //проверим на отрицательное число
